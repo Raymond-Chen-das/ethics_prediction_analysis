@@ -100,26 +100,8 @@ def load_and_prepare_data(data_path: str = 'data/processed/featured_data.csv') -
     print(f"✅ 過濾 country_utilitarian 缺失: {len(df_clean):,} 行")
     if removed_country > 0:
         print(f"   (移除 {removed_country:,} 行, {removed_country/initial_count*100:.2f}%)")
-    
-    # Step 5: 樣本數一致性檢查
-    expected_n = 317258  # 第4.1-4.3節的樣本數
-    actual_n = len(df_clean)
-    
-    print(f"\n{'='*70}")
-    print(f"📌 樣本數一致性檢查")
-    print(f"{'='*70}")
-    print(f"  預期樣本數 (第4.1-4.3節): {expected_n:,}")
-    print(f"  實際樣本數 (本節):         {actual_n:,}")
-    
-    if actual_n == expected_n:
-        print(f"  ✅ 樣本數完全一致！")
-    elif abs(actual_n - expected_n) < 100:
-        print(f"  ⚠️  差異 {abs(actual_n - expected_n)} 行 (可接受)")
-    else:
-        print(f"  ❌ 差異過大: {abs(actual_n - expected_n):,} 行")
-        print(f"     → 可能因為country_utilitarian額外缺失")
-    
-    # Step 6: 檢查層級結構
+       
+    # Step 5: 檢查層級結構
     print(f"\n{'='*70}")
     print(f"📊 階層結構統計 (兩層HLM)")
     print(f"{'='*70}")
@@ -127,7 +109,7 @@ def load_and_prepare_data(data_path: str = 'data/processed/featured_data.csv') -
     print(f"  Level 2 (國家):   {df_clean['UserCountry3'].nunique():,} 個")
     print(f"  (使用者數量:      {df_clean['UserID'].nunique():,} 位，僅供參考)")
     
-    # Step 7: 檢查使用者觀測次數分佈
+    # Step 6: 檢查使用者觀測次數分佈
     user_counts = df_clean.groupby('UserID').size()
     single_obs_pct = (user_counts == 1).sum() / len(user_counts) * 100
     
@@ -144,7 +126,7 @@ def load_and_prepare_data(data_path: str = 'data/processed/featured_data.csv') -
     print(f"     → 三層HLM已嘗試但超過30分鐘未收斂")
     print(f"     → 本分析採用兩層HLM (場景-國家)")
     
-    # Step 8: 檢查國家樣本數分佈
+    # Step 7: 檢查國家樣本數分佈
     country_counts = df_clean.groupby('UserCountry3').size()
     print(f"\n{'='*70}")
     print(f"🌍 國家樣本數分佈")
