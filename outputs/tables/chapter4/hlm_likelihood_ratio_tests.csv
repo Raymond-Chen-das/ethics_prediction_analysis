@@ -1,0 +1,2 @@
+﻿model1,model2,llf1,llf2,lrt_statistic,dof,p_value,significant
+Null Model,Random Intercept Model,-215468.1417766721,-215417.7193131526,100.84492703899741,4,0.0,True
