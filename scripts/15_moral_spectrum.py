@@ -262,7 +262,7 @@ def generate_section_report(
     
     report.append("3. **全研究整合意義**：")
     report.append("   - 此視覺化整合了第3章（探索分析）與第4章（統計推論）的發現")
-    report.append("   - 國家層級變異（ICC=14.35%）在二維空間中清楚呈現")
+    report.append("   - 國家層級變異（ICC=0.25%）在二維空間中清楚呈現")
     report.append("   - 為第6章的哲學討論提供視覺化基礎\n")
     
     report.append("### 視覺化結果\n")

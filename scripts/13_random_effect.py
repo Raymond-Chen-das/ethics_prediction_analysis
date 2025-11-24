@@ -13,7 +13,7 @@
 - outputs/tables/chapter5/random_effect_correlation.csv
 - outputs/tables/chapter5/random_effect_regression.csv
 - report/drafts/chapter5_section1_random_effect.md
-"""
+""" 
 
 import os
 import sys
@@ -196,7 +196,7 @@ def generate_section_report(
     report.append("## 5.1 國家層級變異來源探索\n")
     
     report.append("### 研究問題\n")
-    report.append("第4章 HLM 分析發現 ICC = 14.35%，即 14.35% 的守法選擇變異來自國家層級。")
+    report.append("第4章 HLM 分析發現 ICC = 0.25%，即 0.25% 的守法選擇變異來自國家層級。")
     report.append("本節探討這些變異的來源：哪些國家道德偏好維度與國家層級守法傾向相關？\n")
     
     report.append("### 分析方法\n")
